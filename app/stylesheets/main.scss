@@ -1,0 +1,272 @@
+@import '../assets/century-gothic.ttf';
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+$title-font: 'Montserrat';
+$radius: 1rem;
+$accent-color: rgb(111, 108, 108);
+$submitcolor: #72d788;
+$orange: #f96;
+$delete: #fb513a;
+
+body{
+  background: url('../assets/wood.png');
+  color: $accent-color;
+}
+.main{
+  font-family: 'century-gothic';
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+
+
+.search-bar{
+  padding: 0.5rem;
+  border-radius: $radius/2;
+  background-color: white;
+  color: black;
+  width: 30%;
+  margin: auto;
+  margin-top: 3rem;
+  border: 2px solid rgb(47, 128, 249);
+
+  input{
+    margin-left: 2rem;
+    height: 100%;
+    font-size: 1.1em;
+    width: 70%;
+    border: none;
+    outline: none;
+  }
+}
+
+.add{
+  font-size: 1.5em;
+  display: block;
+  border-radius: 50%;
+  border: none;
+  margin: 2rem;
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  outline: none;
+  background-color: $orange;
+
+  &:active{
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  &:hover{
+    color: #7ec0f0;
+  }
+}
+
+.form{
+  padding: 3rem;
+  input{
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: $radius/2;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    outline: none;
+  }
+
+  .ingredient-field{
+    width: 75%;
+  }
+
+  .quantity-field{
+    width: 15%;
+    display: inline-block;
+  }
+
+  .submit{
+    border: none;
+    color: white;
+    background-color: $submitcolor + 50;
+    border-radius: $radius;
+    width: 40%;
+    height: 5rem;
+    margin: auto;
+    &:hover{
+      background-color: $submitcolor;
+    }
+  }
+}
+
+.add-button{
+  border: none;
+  outline: none;
+  border-radius: $radius/2;
+  background-color: rgb(64, 62, 64);
+  color: white;
+  width: 100%;
+  height: 4rem;
+}
+
+.delete-button{
+  @extend .add-button;
+  background-color: $delete+50;
+
+  &:hover,:active{
+    background-color: $delete;
+  }
+}
+
+.import{
+  width: 100%;
+  .search-btn{
+    outline: none;
+    border: none;
+    background-color: rgb(241, 239, 242);
+    width: 10rem;
+    margin-top: 1rem;
+    &:hover{
+      color: black;
+      outline: 1px solid $accent-color;
+    }
+  }
+
+  .import-recipe{
+    position: relative;
+    width: 20%;
+    margin: 5rem;
+    display: inline-block;
+    .import-title{
+      font-size: 1.5em;
+      color: white;
+      margin: auto;
+    }
+    img{
+      border-radius: $radius;
+      width: 55%;
+    }
+
+    .yummly-add{
+      @extend .add;
+      position: absolute;
+      bottom: -1rem;
+      right: 2rem;
+    }
+  }
+
+}
+
+.yummly{
+  @extend .add-button;
+  width: 25%;
+  float: right;
+  margin-right: 1rem;
+  border: none;
+  &:hover, :active{
+    color: $orange;
+  }
+}
+
+.full-recipe{
+  background-color: white;
+  margin: 10rem auto 10rem auto;
+
+  .servings{
+    padding-top: 1rem;
+    font-size: 1.5em;
+    background-color: $accent-color;
+    color: white;
+
+    button{
+      margin: 0 2rem 1rem 2rem;
+      border: none;
+      background:none;
+      outline: none;
+
+      &:hover{
+        color: $orange;
+      }
+    }
+  }
+
+  h2{
+    font-family: $title-font;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid;
+  }
+
+  .left{
+    font-family: $title-font;
+    background-color: $accent-color;
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.4);
+  }
+  .full-recipe_title{
+    text-align: center;
+    font-family: $title-font;
+    font-size: 3.2em;
+    color: rgb(252, 154, 38);
+  }
+
+  input{
+    margin: 1rem 0 1rem 0;
+    outline: none;
+    border: none;
+  }
+
+  .ingredient{
+    width: 70%;
+  }
+
+  img{
+    width: 105.5%;
+    margin-left: -1.5rem;
+  }
+}
+
+.recipe{
+  display: inline-block;
+  cursor: pointer;
+  margin: 2rem;
+  margin-bottom: 8rem;
+  margin-bottom: 8rem;
+  background-color: rgb(255, 255, 255);
+  width: 30%;
+  height: 30rem;
+  border-radius: $radius;
+  h1{
+    text-align: center;
+    cursor: pointer;
+  }
+  img{
+    border-top: 2px solid $accent-color;
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    border-radius: 0 0 $radius $radius
+  }
+  .edit{
+    float: right;
+    padding: 1rem;
+    display: inline;
+    &:hover,&:active{
+      color: $orange;
+      cursor: pointer;
+
+    }
+  }
+}
+.confirm{
+  .modal-footer{
+    button{
+      @extend .add-button;
+      width: 50%;
+    }
+    .yes{
+      background-color: rgb(65, 191, 119);
+    }
+
+    .no{
+      background-color: #c23434;
+    }
+  }
+}
